@@ -35,9 +35,9 @@
             <div class="hero-content">
                 <p class="eyebrow">BRISBANE NORTH & MORETON BAY</p>
 
-                <h1>Tiling Done Right.</h1>
+                <h1 id="hero-heading">Tiling Done Right.</h1>
 
-                <p class="hero-description">
+                <p class="hero-description" id="hero-description">
     Bathroom, floor, wall and outdoor tiling across
     Brisbane North and Moreton Bay. With 12 years
     of experience in the trade, I take pride in
@@ -81,7 +81,7 @@
             </p>
         </div>
 
-        <div class="services-grid">
+        <div class="services-grid" id="services-grid">
 
             <article class="tiling-service-card">
                 <span class="service-number">01</span>
@@ -167,10 +167,10 @@
     >
 </div>
 
-        <div class="about-content">
+        <div class="about-content" id="about-content">
             <p class="eyebrow">ABOUT SET RIGHT TILING</p>
 
-            <h2>Taking Pride in Every Job</h2>
+            <h2 id="about-heading">Taking Pride in Every Job</h2>
 
             <p>
                 Set Right Tiling was built from a passion
@@ -224,7 +224,7 @@
         </div>
 
         
-<div class="gallery-grid">
+<div class="gallery-grid" id="gallery-grid">
 
     <div class="gallery-item gallery-large">
         <img
@@ -279,16 +279,16 @@
 
         <div>
             <p class="eyebrow">WHERE WE WORK</p>
-            <h2>Servicing Brisbane North & Moreton Bay</h2>
+            <h2 id="service-area-heading">Servicing Brisbane North & Moreton Bay</h2>
         </div>
 
         <div>
-            <p>
-                Set Right Tiling works across Brisbane's
-                northern suburbs and the Moreton Bay
-                region, helping homeowners and other
-                customers with their tiling projects.
-            </p>
+            <p id="service-area-description">
+    Set Right Tiling works across Brisbane's
+    northern suburbs and the Moreton Bay
+    region, helping homeowners and other
+    customers with their tiling projects.
+</p>
 
             <p>
                 Not sure if your property is within
@@ -491,5 +491,136 @@
         }
     });
 </script>
+
+
+<script>
+    async function loadWebsiteContent() {
+        try {
+            const response = await fetch("content.json");
+
+            if (!response.ok) {
+                throw new Error("Unable to load website content");
+            }
+
+            const content = await response.json();
+
+            // Homepage
+            const heroHeading = document.getElementById("hero-heading");
+            const heroDescription = document.getElementById("hero-description");
+
+            if (heroHeading && content.hero?.heading) {
+                heroHeading.textContent = content.hero.heading;
+            }
+
+            if (heroDescription && content.hero?.description) {
+                heroDescription.textContent = content.hero.description;
+            }
+
+            // Services
+            const servicesGrid = document.getElementById("services-grid");
+
+            if (
+                servicesGrid &&
+                Array.isArray(content.services) &&
+                content.services.length > 0
+            ) {
+                const cards = content.services.map(service => {
+                    const card = document.createElement("article");
+                    card.className = "tiling-service-card";
+
+                    const heading = document.createElement("h3");
+                    heading.textContent = service.title || "";
+
+                    const description = document.createElement("p");
+                    description.textContent = service.description || "";
+
+                    card.append(heading, description);
+                    return card;
+                });
+
+                servicesGrid.replaceChildren(...cards);
+            }
+
+            // About section
+            const aboutHeading = document.getElementById("about-heading");
+            const aboutContent = document.getElementById("about-content");
+
+            if (aboutHeading && content.about?.heading) {
+                aboutHeading.textContent = content.about.heading;
+            }
+
+            if (aboutContent && Array.isArray(content.about?.paragraphs)) {
+                const existingParagraphs = aboutContent.querySelectorAll(":scope > p:not(.eyebrow)");
+
+                existingParagraphs.forEach(paragraph => paragraph.remove());
+
+                const contactLink = aboutContent.querySelector(".text-link");
+
+                content.about.paragraphs.forEach(text => {
+                    const paragraph = document.createElement("p");
+                    paragraph.textContent = text;
+
+                    if (contactLink) {
+                        aboutContent.insertBefore(paragraph, contactLink);
+                    } else {
+                        aboutContent.appendChild(paragraph);
+                    }
+                });
+            }
+
+            // Service area
+            const serviceAreaHeading = document.getElementById("service-area-heading");
+            const serviceAreaDescription = document.getElementById("service-area-description");
+
+            if (serviceAreaHeading && content.service_area?.heading) {
+                serviceAreaHeading.textContent = content.service_area.heading;
+            }
+
+            if (serviceAreaDescription && content.service_area?.description) {
+                serviceAreaDescription.textContent = content.service_area.description;
+            }
+
+            // Project gallery
+            const galleryGrid = document.getElementById("gallery-grid");
+
+            if (
+                galleryGrid &&
+                Array.isArray(content.gallery) &&
+                content.gallery.length > 0
+            ) {
+                const galleryItems = content.gallery
+                    .filter(photo => photo.image)
+                    .map((photo, index) => {
+                        const item = document.createElement("div");
+
+                        item.className = index === 0
+                            ? "gallery-item gallery-large"
+                            : "gallery-item";
+
+                        const image = document.createElement("img");
+
+                        image.src = photo.image;
+                        image.alt = photo.alt || "Set Right Tiling project photo";
+                        image.loading = "lazy";
+
+                        item.appendChild(image);
+
+                        return item;
+                    });
+
+                if (galleryItems.length > 0) {
+                    galleryGrid.replaceChildren(...galleryItems);
+                }
+            }
+
+        } catch (error) {
+            console.error("Website content could not be loaded:", error);
+        }
+    }
+
+    loadWebsiteContent();
+</script>
+
+
 </body>
 </html>
