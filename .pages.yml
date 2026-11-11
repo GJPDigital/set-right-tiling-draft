@@ -1,0 +1,14 @@
+
+media:
+  input: images
+  output: /images
+
+content:
+  - name: website
+    label: Website
+    type: file
+    path: index.html
+    fields:
+      - name: body
+        label: Page HTML
+        type: code
