@@ -5,10 +5,65 @@ media:
 
 content:
   - name: website
-    label: Website
+    label: Website Content
     type: file
-    path: index.html
+    path: content.json
+    format: json
     fields:
-      - name: body
-        label: Page HTML
-        type: code
+      - name: hero
+        label: Homepage Introduction
+        type: object
+        fields:
+          - name: heading
+            label: Main Heading
+            type: string
+          - name: description
+            label: Introduction Text
+            type: text
+
+      - name: services
+        label: Tiling Services
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Service Name
+            type: string
+          - name: description
+            label: Service Description
+            type: text
+
+      - name: about
+        label: About Set Right Tiling
+        type: object
+        fields:
+          - name: heading
+            label: About Heading
+            type: string
+          - name: paragraphs
+            label: About Paragraphs
+            type: string
+            list: true
+
+      - name: service_area
+        label: Service Area
+        type: object
+        fields:
+          - name: heading
+            label: Service Area Heading
+            type: string
+          - name: description
+            label: Service Area Description
+            type: text
+
+      - name: gallery
+        label: Project Gallery
+        type: object
+        list: true
+        fields:
+          - name: image
+            label: Project Photo
+            type: image
+          - name: alt
+            label: Image Description
+            type: string
