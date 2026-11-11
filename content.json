@@ -1,4 +1,3 @@
-
 {
   "hero": {
     "heading": "Tiling Done Right.",
@@ -45,24 +44,27 @@
   },
   "gallery": [
     {
-      "image": "images/pool-surround-tiling.jpg",
+      "image": "/images/pool-surround-tiling.jpg",
       "alt": "Completed outdoor pool surround tiling"
     },
     {
-      "image": "images/outdoor-tiled-stairs.jpg",
+      "image": "/images/outdoor-tiled-stairs.jpg",
       "alt": "Outdoor tiled stairs and paving"
     },
     {
-      "image": "images/hexagon-shower-wall-tiling.jpg",
+      "image": "/images/hexagon-shower-wall-tiling.jpg",
       "alt": "Hexagonal feature tiles in a shower"
     },
     {
-      "image": "images/bathroom-wall-floor-tiling.jpg",
+      "image": "/images/bathroom-wall-floor-tiling.jpg",
       "alt": "Large-format bathroom tiling"
     },
     {
-      "image": "images/large-format-floor-tiling-installation.jpg",
+      "image": "/images/large-format-floor-tiling-installation.jpg",
       "alt": "Large-format floor tiles being installed"
+    },
+    {
+      "image": "/images/GJPDigitalCircularLogo.png"
     }
   ]
 }
