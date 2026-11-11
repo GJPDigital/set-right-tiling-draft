@@ -1,0 +1,68 @@
+
+{
+  "hero": {
+    "heading": "Tiling Done Right.",
+    "description": "Bathroom, floor, wall and outdoor tiling across Brisbane North and Moreton Bay. With 12 years of experience in the trade, I take pride in doing the job properly and getting the details right."
+  },
+  "services": [
+    {
+      "title": "Bathroom & Shower Tiling",
+      "description": "Bathroom walls, floors and shower tiling with careful attention to preparation and finishing."
+    },
+    {
+      "title": "Floor & Wall Tiling",
+      "description": "Practical, professionally finished tiling for living spaces, kitchens and other areas."
+    },
+    {
+      "title": "Kitchen Splashbacks",
+      "description": "Splashback tiling to complement your kitchen and provide a clean, finished look."
+    },
+    {
+      "title": "Outdoor Tiling",
+      "description": "Tiling for patios, balconies, pool surrounds and outdoor entertaining areas."
+    },
+    {
+      "title": "Tile Regrouting",
+      "description": "Cement and epoxy regrouting to refresh and maintain existing tiled surfaces."
+    },
+    {
+      "title": "Silicone Recaulking",
+      "description": "Replacing ageing silicone around tiled areas for a cleaner, neater finish."
+    }
+  ],
+  "about": {
+    "heading": "Taking Pride in Every Job",
+    "paragraphs": [
+      "Set Right Tiling was built from a passion for the tiling trade and a commitment to quality workmanship.",
+      "With 12 years of experience in the industry and seven years running the business, I believe that doing a job properly, paying attention to the finer details and treating every home with respect are what make a good tradesman.",
+      "For me, it's not just about laying tiles. It's about getting the preparation right, delivering a finish to be proud of and making sure customers are happy with the result.",
+      "I value honest communication, reliability and turning up when I say I will. My name and reputation go into every job."
+    ]
+  },
+  "service_area": {
+    "heading": "Servicing Brisbane North & Moreton Bay",
+    "description": "Set Right Tiling works across Brisbane's northern suburbs and the Moreton Bay region, helping homeowners and other customers with their tiling projects."
+  },
+  "gallery": [
+    {
+      "image": "images/pool-surround-tiling.jpg",
+      "alt": "Completed outdoor pool surround tiling"
+    },
+    {
+      "image": "images/outdoor-tiled-stairs.jpg",
+      "alt": "Outdoor tiled stairs and paving"
+    },
+    {
+      "image": "images/hexagon-shower-wall-tiling.jpg",
+      "alt": "Hexagonal feature tiles in a shower"
+    },
+    {
+      "image": "images/bathroom-wall-floor-tiling.jpg",
+      "alt": "Large-format bathroom tiling"
+    },
+    {
+      "image": "images/large-format-floor-tiling-installation.jpg",
+      "alt": "Large-format floor tiles being installed"
+    }
+  ]
+}
