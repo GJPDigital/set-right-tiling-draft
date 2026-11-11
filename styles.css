@@ -597,7 +597,7 @@ h1 {
     --surface: #F4F4F2;
     --text: #202020;
     --muted: #626262;
-    --accent: #D9B334;
+    --accent: #FFCC00;
 }
 
 body {
@@ -854,4 +854,41 @@ body {
     .gallery-item:hover img {
         transform: none;
     }
+}
+/* Set Right Tiling - yellow branding refinements */
+
+:root {
+    --accent: #FFCC00;
+}
+
+/* Main call-to-action buttons */
+.hero .btn-dark,
+.contact-form .btn-dark {
+    background: var(--accent);
+    color: #202020;
+}
+
+.hero .btn-dark:hover,
+.contact-form .btn-dark:hover {
+    background: #E6B800;
+}
+
+/* Service cards */
+.tiling-service-card {
+    border-top: 2px solid var(--accent);
+}
+
+/* Small accents */
+.text-link {
+    border-bottom-color: var(--accent);
+}
+
+/* Contact section */
+.contact-details span {
+    color: #806600;
+}
+
+/* Footer links */
+.footer-links a:hover {
+    color: var(--accent);
 }
