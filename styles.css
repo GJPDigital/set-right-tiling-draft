@@ -645,3 +645,29 @@ a {
         transform: none;
     }
 }
+/* =====================================
+   ENQUIRY FORM FEEDBACK
+===================================== */
+
+.form-status {
+    margin: 18px 0 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.form-status:empty {
+    display: none;
+}
+
+.form-status.success {
+    color: #246B3A;
+}
+
+.form-status.error {
+    color: #B42318;
+}
+
+.contact-form button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
