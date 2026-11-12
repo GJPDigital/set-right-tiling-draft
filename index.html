@@ -599,7 +599,7 @@
 
                         const image = document.createElement("img");
 
-                        image.src = photo.image;
+                        image.src = photo.image.replace(/^\/+/, "");
                         image.alt = photo.alt || "Set Right Tiling project photo";
                         image.loading = "lazy";
 
