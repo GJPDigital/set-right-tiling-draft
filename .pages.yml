@@ -1,7 +1,7 @@
 
 media:
   input: images
-  output: /images
+  output: images
 
 content:
   - name: website
